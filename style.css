@@ -3,7 +3,7 @@
 
 /* Basic Styles
 ================================================== */
-.board {            padding: 3em; text-align: center;}
+#board {            padding: 3em; text-align: center;}
 .row {              width: 302px; clear: both; margin: 0 auto;}
 .row > div {        width: 100px; height: 100px; cursor: pointer; float: left;}
 .row > div:hover {  background-color: rgb(32, 182, 241);}
