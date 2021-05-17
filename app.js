@@ -1,5 +1,7 @@
-// **** Define variable for all 9 cells. 
+// **** Global variables
 let cells = document.querySelectorAll(".row > div"), clickCount = 0;
+let gameOver = false;
+let player = ['x', 'o'];
 
 // **** Adds event listener for each cell on the board. 
 cells.forEach(cell => {
@@ -9,6 +11,11 @@ cells.forEach(cell => {
 
 // **** Control what happens when a cell is clicked. 
 function clickedCell(ev) {
+    playerCheck(ev);
+    winCheck();
+}
+
+function playerCheck(ev) {
     // define variables
     let cell = ev.target.textContent;
     //Start with X
@@ -26,6 +33,20 @@ function clickedCell(ev) {
     // **** Else, do nothing.
     else {
         ev.target.textContent = 'o';
+    }
+}
+
+
+function winCheck() {
+    if (cells[0].textContent === player ) {
+        if (cells[1].textContent === player && cells[2].textContent === player) {
+            console.log('this worked')
+        }            
+    }
+    if (cells[0].textContent === player ) {
+        if (cells[4].textContent === player && cells[8].textContent === player) {
+            console.log('this worked')
+        }            
     }
 }
 
